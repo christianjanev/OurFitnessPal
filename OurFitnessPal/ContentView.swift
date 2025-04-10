@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    // nutritionix
+    // cloudkit
     var body: some View {
         VStack {
             Image(systemName: "globe")
