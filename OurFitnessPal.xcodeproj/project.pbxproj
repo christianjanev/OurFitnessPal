@@ -11,6 +11,8 @@
 		862C5B882DA6EE8E00C90775 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862C5B872DA6EE8E00C90775 /* ContentView.swift */; };
 		862C5B8A2DA6EE8F00C90775 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 862C5B892DA6EE8F00C90775 /* Assets.xcassets */; };
 		862C5B8D2DA6EE8F00C90775 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 862C5B8C2DA6EE8F00C90775 /* Preview Assets.xcassets */; };
+		865B63D42DB165B700A1D94A /* CalorieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865B63D32DB165B700A1D94A /* CalorieData.swift */; };
+		865B63D72DB165C100A1D94A /* SwiftData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 865B63D62DB165C000A1D94A /* SwiftData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		862C5B872DA6EE8E00C90775 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		862C5B892DA6EE8F00C90775 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		862C5B8C2DA6EE8F00C90775 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		865B63D32DB165B700A1D94A /* CalorieData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalorieData.swift; sourceTree = "<group>"; };
+		865B63D62DB165C000A1D94A /* SwiftData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftData.framework; path = System/Library/Frameworks/SwiftData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				865B63D72DB165C100A1D94A /* SwiftData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +42,7 @@
 			children = (
 				862C5B842DA6EE8E00C90775 /* OurFitnessPal */,
 				862C5B832DA6EE8E00C90775 /* Products */,
+				865B63D52DB165C000A1D94A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +57,7 @@
 		862C5B842DA6EE8E00C90775 /* OurFitnessPal */ = {
 			isa = PBXGroup;
 			children = (
+				865B63D32DB165B700A1D94A /* CalorieData.swift */,
 				862C5B852DA6EE8E00C90775 /* OurFitnessPalApp.swift */,
 				862C5B872DA6EE8E00C90775 /* ContentView.swift */,
 				862C5B892DA6EE8F00C90775 /* Assets.xcassets */,
@@ -65,6 +72,14 @@
 				862C5B8C2DA6EE8F00C90775 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		865B63D52DB165C000A1D94A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				865B63D62DB165C000A1D94A /* SwiftData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +154,7 @@
 			files = (
 				862C5B882DA6EE8E00C90775 /* ContentView.swift in Sources */,
 				862C5B862DA6EE8E00C90775 /* OurFitnessPalApp.swift in Sources */,
+				865B63D42DB165B700A1D94A /* CalorieData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,7 @@ struct ContentView: View {
         VStack(){
             
             //Main Title
-            Text("OurFitenssPal")
+            Text("OurFitnessPal")
                 .font(.system(size: 40))
             
             Text("Remain")
@@ -35,7 +35,7 @@ struct ContentView: View {
                     .frame(width: 40, height: 40)
                     .offset(x: 30, y: 40)
                 
-                Text("Protien")
+                Text("Protein")
                 
                 Text("Carbs")
                 

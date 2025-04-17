@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct OurFitnessPalApp: App {
@@ -13,5 +14,6 @@ struct OurFitnessPalApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: CalorieData.self)
     }
 }
