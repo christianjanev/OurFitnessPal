@@ -9,9 +9,17 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Query var calories: [CalorieData]
+    @Query var rawCalorieData: [CalorieData]
     @Environment(\.modelContext) var modelContext
+    var calories: [Date: [CalorieData]] {
+        Dictionary(grouping: rawCalorieData) { calorie in
+            Calendar.current.startOfDay(for: calorie.date)
+        }
+    }
+    
     @State var selectedTab = 2
+    
+    
     // nutritionix--database for foods qr code
     // cloudkit--save data to cloud
     var body: some View {
