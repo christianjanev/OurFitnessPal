@@ -17,18 +17,26 @@ struct DietView: View {
         }
     }
     
+    @State var rawPickDate = Date()
+    
     var body: some View {
         VStack {
+            
+            DatePicker("Pick Date", selection: $rawPickDate, displayedComponents: [.date])
+                .padding()
+            
+            Divider()
+            
             List {
                 ForEach(calories.keys.sorted(), id: \.self) { date in
-                    ForEach(calories[date]!, id: \.self) { calorie in
+                    ForEach(calories[Calendar.current.startOfDay(for: rawPickDate)]!, id: \.self) { calorie in
                         Text(calorie.name)
                     }
                 }
             }
             
             Button("Add") {
-                let calorie: CalorieData = CalorieData(date: Date.now, carbs: 50.2, protein: 10.2, satFat: 3, unsatFat: 2, transFat: 0, name: "Food2", sodium: 100)
+                let calorie: CalorieData = CalorieData(date: rawPickDate, carbs: 50.2, protein: 10.2, satFat: 3, unsatFat: 2, transFat: 0, name: "Food2", sodium: 100)
                 modelContext.insert(calorie)
             }
         }
