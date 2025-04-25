@@ -23,6 +23,9 @@ struct ContentView: View {
     // nutritionix--database for foods qr code
     // cloudkit--save data to cloud
     var body: some View {
+        
+        
+        
         ZStack(alignment: .bottom) {
             TabView(selection: $selectedTab) {
                 DietView()
@@ -34,6 +37,9 @@ struct ContentView: View {
                     //Main Title
                     Text("OurFitnessPal")
                         .font(.system(size: 40))
+                        .frame(width: 700, height: 60)
+//                        .background(Color.green)
+                        
                     Divider()
                     
                     Text("Remain")
@@ -49,7 +55,7 @@ struct ContentView: View {
                         
                         Text("Calories")
                             .frame(width: 70, height: 10)
-                            .offset(x: 0, y: -30)
+                            .offset(x: 0, y: -15)
                             .opacity(0.6)
 
                         
@@ -103,6 +109,26 @@ struct ContentView: View {
                     Divider()
                     
                     //***************Exercise Plan
+                    Text("Exercise Plan")
+                        .frame(width: 200, height: 40)
+                        .offset(x: -95, y: 0)
+                        .font(.system(size: 20))
+                    ZStack(){
+                        Text("")
+                            .fixedSize(horizontal: false, vertical: true)
+                            .multilineTextAlignment(.center)
+                            .padding()
+                            .frame(width: 300, height: 75)
+                            .background(Rectangle().fill(Color.white).shadow(radius: 3))
+                    }
+                    
+                    
+                    
+                    //***************Recommended Foods
+                    Text("Recommended Foods")
+                        .frame(width: 300, height: 40)
+                        .offset(x: -55, y: 0)
+                        .font(.system(size: 20))
                     ZStack(){
                         Text("")
                             .fixedSize(horizontal: false, vertical: true)
@@ -115,19 +141,29 @@ struct ContentView: View {
                     
                     
                     
+                    
+                    
+                    
                 } //Closing VStack
+                
+                
+                //The toolbar Menu
                 .tabItem { Label("Overview", systemImage: "scribble") }
                 .tag(2)
-                
                 ExerciseView()
                     .tabItem { Label("Exercise", systemImage: "dumbbell.fill") }
                     .tag(3)
+                ///End of toolbar Menu
+                
+                
             } //Closing TabView
             Rectangle()
                 .fill(Color.gray.opacity(0.5))
                 .frame(height: 0.5)
                 .edgesIgnoringSafeArea(.bottom)
                 .offset(y: -49)
+            
+            
         } //Closing ZStack
     } //Closing SomeView
     
