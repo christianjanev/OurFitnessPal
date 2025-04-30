@@ -16,6 +16,8 @@
 		865B63DB2DB16B4100A1D94A /* DietView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865B63DA2DB16B4100A1D94A /* DietView.swift */; };
 		865B63DD2DB16C1D00A1D94A /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865B63DC2DB16C1D00A1D94A /* ExerciseView.swift */; };
 		865B63DF2DBAA48D00A1D94A /* CalorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865B63DE2DBAA48D00A1D94A /* CalorieView.swift */; };
+		865B63E12DBFE46800A1D94A /* CalorieFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865B63E02DBFE46800A1D94A /* CalorieFullView.swift */; };
+		865B63E32DBFE54100A1D94A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865B63E22DBFE54100A1D94A /* UserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		865B63DA2DB16B4100A1D94A /* DietView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietView.swift; sourceTree = "<group>"; };
 		865B63DC2DB16C1D00A1D94A /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		865B63DE2DBAA48D00A1D94A /* CalorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieView.swift; sourceTree = "<group>"; };
+		865B63E02DBFE46800A1D94A /* CalorieFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieFullView.swift; sourceTree = "<group>"; };
+		865B63E22DBFE54100A1D94A /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				865B63DC2DB16C1D00A1D94A /* ExerciseView.swift */,
 				865B63DA2DB16B4100A1D94A /* DietView.swift */,
 				865B63DE2DBAA48D00A1D94A /* CalorieView.swift */,
+				865B63E02DBFE46800A1D94A /* CalorieFullView.swift */,
+				865B63E22DBFE54100A1D94A /* UserData.swift */,
 				862C5B892DA6EE8F00C90775 /* Assets.xcassets */,
 				862C5B8B2DA6EE8F00C90775 /* Preview Content */,
 			);
@@ -162,6 +168,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				865B63DD2DB16C1D00A1D94A /* ExerciseView.swift in Sources */,
+				865B63E12DBFE46800A1D94A /* CalorieFullView.swift in Sources */,
+				865B63E32DBFE54100A1D94A /* UserData.swift in Sources */,
 				865B63DB2DB16B4100A1D94A /* DietView.swift in Sources */,
 				865B63DF2DBAA48D00A1D94A /* CalorieView.swift in Sources */,
 				862C5B882DA6EE8E00C90775 /* ContentView.swift in Sources */,

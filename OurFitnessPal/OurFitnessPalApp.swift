@@ -14,6 +14,6 @@ struct OurFitnessPalApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: CalorieData.self)
+        .modelContainer(for: [CalorieData.self, UserData.self])
     }
 }
