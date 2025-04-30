@@ -29,7 +29,7 @@ struct ContentView: View {
         ZStack(alignment: .bottom) {
             TabView(selection: $selectedTab) {
                 DietView()
-                    .tabItem { Label("Diet", systemImage: "fork.knife.circle") }
+                    .tabItem { Label("History", systemImage: "fork.knife.circle") }
                     .tag(1)
                 
                 VStack(){
@@ -42,7 +42,7 @@ struct ContentView: View {
                         
                     Divider()
                     
-                    Text("Remain")
+                    Text("Overview")
                         .font(.system(size: 30))
                     
                     ZStack(){
@@ -50,8 +50,13 @@ struct ContentView: View {
                             .fixedSize(horizontal: false, vertical: true)
                             .multilineTextAlignment(.center)
                             .padding()
-                            .frame(width: 300, height: 200)
+                            .frame(width: 300, height: 240)
                             .background(Rectangle().fill(Color.white).shadow(radius: 3))
+                        
+                        
+                        //Calorie Number
+                        Text("")
+                            .offset(x: 0, y: -50)
                         
                         Text("Calories")
                             .frame(width: 70, height: 10)
@@ -59,6 +64,9 @@ struct ContentView: View {
                             .opacity(0.6)
 
                         
+                        //Protein Number
+                        Text("")
+                            .offset(x: 40, y: 30)
                         Text("Protein")
                             .frame(width: 70, height: 10)
                             .offset(x: -100, y: 70)
@@ -75,7 +83,16 @@ struct ContentView: View {
                             .frame(width: 70, height: 10)
                             .offset(x: 100, y: 70)
                             .opacity(0.6)
+                        
+                        //Button for adding water
+                        Button(){
+                        } label: {
+                            Image(systemName: "plus.app.fill")
+                        }
+                        .font(.system(size: 40))
+                        .offset(x: 5, y: 120)
                     }//Closing ZStack
+                    .padding(.bottom, 20)
                     
                     
                     //************ Water Section
@@ -151,7 +168,7 @@ struct ContentView: View {
                 .tabItem { Label("Overview", systemImage: "scribble") }
                 .tag(2)
                 ExerciseView()
-                    .tabItem { Label("Exercise", systemImage: "dumbbell.fill") }
+                    .tabItem { Label("Diet", systemImage: "dumbbell.fill") }
                     .tag(3)
                 ///End of toolbar Menu
                 

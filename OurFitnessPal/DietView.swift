@@ -5,6 +5,8 @@
 //  Created by Janev, Christian (514673) on 4/17/25.
 //
 
+///WAS DIETVIEW AND NOW ITS HISTORY
+
 import SwiftUI
 import SwiftData
 
@@ -38,7 +40,7 @@ struct DietView: View {
             Button("Add") {
                 let calorie: CalorieData = CalorieData(date: rawPickDate, carbs: 50.2, protein: 10.2, satFat: 3, unsatFat: 2, transFat: 0, name: "Food2", sodium: 100)
                 modelContext.insert(calorie)
-            }
+            }//closing add
         }
     }
 }
