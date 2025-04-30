@@ -10,6 +10,7 @@ import SwiftData
 
 struct ContentView: View {
     @Query var rawCalorieData: [CalorieData]
+    @Query var userData: [UserData]
     @Environment(\.modelContext) var modelContext
     var calories: [Date: [CalorieData]] {
         Dictionary(grouping: rawCalorieData) { calorie in
@@ -18,14 +19,12 @@ struct ContentView: View {
     }
     
     @State var selectedTab = 2
+    @State var firstRun = true
     
     
     // nutritionix--database for foods qr code
     // cloudkit--save data to cloud
     var body: some View {
-        
-        
-        
         ZStack(alignment: .bottom) {
             TabView(selection: $selectedTab) {
                 DietView()
@@ -44,7 +43,7 @@ struct ContentView: View {
                     
                     Text("Remain")
                         .font(.system(size: 30))
-                    
+                    // \(userData.first?.calorieGoal() ?? 0)
                     ZStack(){
                         Text("")
                             .fixedSize(horizontal: false, vertical: true)
@@ -137,13 +136,6 @@ struct ContentView: View {
                             .frame(width: 300, height: 75)
                             .background(Rectangle().fill(Color.white).shadow(radius: 3))
                     }
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                 } //Closing VStack
                 
                 
@@ -165,6 +157,14 @@ struct ContentView: View {
             
             
         } //Closing ZStack
+        .onAppear() {
+            if (!userData.isEmpty) {
+                firstRun = false
+            }
+        }
+        .sheet(isPresented: $firstRun) {
+            
+        }
     } //Closing SomeView
     
     func add(date: Date, carbs: Double, protein: Double, satFat: Double, unsatFat: Double, transFat: Double, name: String, sodium: Double = 0) {
@@ -174,5 +174,15 @@ struct ContentView: View {
 } //closing Content View
 
 #Preview {
-    ContentView()
+    let config = ModelConfiguration(isStoredInMemoryOnly: true)
+    let container = try! ModelContainer(for: CalorieData.self, UserData.self, configurations: config)
+    // This code is required in order to test SwiftData in previews without crashing.
+    
+    let calorie = CalorieData(date: Date.now, carbs: 20, protein: 30, satFat: 10, unsatFat: 2, transFat: 0, name: "Nice Food")
+    let user = UserData(proteinGoal: 150, carbGoal: 325, fatGoal: 75, waterGoal: 338, weights: [Date.now: 150], firstTimeRun: true)
+    
+    container.mainContext.insert(user)
+    
+    return ContentView()
+        .modelContainer(container)
 } //Closing #Preview

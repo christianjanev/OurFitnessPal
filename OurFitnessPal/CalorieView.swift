@@ -21,19 +21,46 @@ struct CalorieView: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
                 }
                 
-                Text("\(getCalorieCount(calorie: calorie))")
+                VStack {
+                    Text("\(Int(getCalorieCount(calorie: calorie)))")
+                    Text("Calories")
+                }
+                
+//                Divider()
+//                
+//                VStack {
+//                    Text("\(Int(calorie.protein))")
+//                    Text("Protein")
+//                }
+//                
+//                Divider()
+//                
+//                VStack {
+//                    Text("\(Int(calorie.carbs))")
+//                    Text("Carbs")
+//                }
+//                
+//                Divider()
+//                
+//                VStack {
+//                    Text("\(Int(getTotalFat(calorie: calorie)))")
+//                    Text("Fat")
+//                }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: 40)
-        .padding()
-        .border(Color.black)
     }
+}
+
+func getTotalFat(calorie: CalorieData) -> Double {
+    let totalFat = calorie.satFat + calorie.unsatFat + calorie.transFat
+    return totalFat
 }
 
 func getCalorieCount(calorie: CalorieData) -> Double {
     let carbsCalories = calorie.carbs * 4
     let proteinCalories = calorie.protein * 4
-    let totalFat = calorie.satFat + calorie.unsatFat + calorie.transFat
+    let totalFat = getTotalFat(calorie: calorie)
     let fatCalories = totalFat * 9
     return carbsCalories + proteinCalories + fatCalories
 }

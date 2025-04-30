@@ -28,9 +28,9 @@ struct DietView: View {
             Divider()
             
             List {
-                ForEach(calories.keys.sorted(), id: \.self) { date in
-                    ForEach(calories[Calendar.current.startOfDay(for: rawPickDate)]!, id: \.self) { calorie in
-                        Text(calorie.name)
+                if let calories = calories[Calendar.current.startOfDay(for: rawPickDate)] {
+                    ForEach(calories, id: \.self) { calorie in
+                            CalorieView(calorie: calorie)
                     }
                 }
             }
