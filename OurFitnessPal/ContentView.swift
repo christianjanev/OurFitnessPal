@@ -54,7 +54,7 @@ struct ContentView: View {
                         
                         
                         //Calorie Number
-                        Text("")
+                        Text("\(userData.first?.calorieGoal() ?? 0)")
                             .offset(x: 0, y: -50)
                         
                         Text("Calories")
@@ -64,7 +64,7 @@ struct ContentView: View {
 
                         
                         //Protein Number
-                        Text("")
+                        Text("\(userData.first?.proteinGoal ?? 0)")
                             .offset(x: 40, y: 30)
                         Text("Protein")
                             .frame(width: 70, height: 10)
