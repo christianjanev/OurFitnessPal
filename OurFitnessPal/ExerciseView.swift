@@ -53,6 +53,7 @@ struct ExerciseView: View {
                 .background(Color(.blue))
                 .offset(x: -95, y: 0)
                 .font(.system(size: 20))
+            
             ZStack(){
                 Text("")
                     .fixedSize(horizontal: false, vertical: true)
@@ -64,15 +65,15 @@ struct ExerciseView: View {
                             Image("gutHealth")
                                 .resizable()
                                  .scaledToFill()
-                                 .frame(width: 300, height: 75)
+                                 .frame(width: 300, height: 575)
                                  .clipped()
                                  .clipShape(RoundedRectangle(cornerRadius: 12))
                             
                             RoundedRectangle(cornerRadius: 25.0)
                                 .stroke(Color.white)
-                        }
-                    )
-            }
+                        }//closing z
+                    )//closing .back
+            }//closing z
             
             
         } //closing Vstack

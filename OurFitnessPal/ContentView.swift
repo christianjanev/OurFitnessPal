@@ -36,7 +36,7 @@ struct ContentView: View {
                     //Main Title
                     Text("OurFitnessPal")
                         .font(.system(size: 40))
-                        .frame(width: 700, height: 60)
+                        .frame(width: 700, height: 50)
 //                        .background(Color.green)
                         
                     Divider()
@@ -56,6 +56,7 @@ struct ContentView: View {
                         //Calorie Number
                         Text("\(userData.first?.calorieGoal() ?? 0)")
                             .offset(x: 0, y: -50)
+                            .font(.system(size: 30))
                         
                         Text("Calories")
                             .frame(width: 70, height: 10)
@@ -64,20 +65,31 @@ struct ContentView: View {
 
                         
                         //Protein Number
-                        Text("\(userData.first?.proteinGoal ?? 0)")
-                            .offset(x: 40, y: 30)
+                        Text("50")
+                            .offset(x: -100, y: 45)
+                            .font(.system(size: 20))
+
                         Text("Protein")
                             .frame(width: 70, height: 10)
                             .offset(x: -100, y: 70)
                             .opacity(0.6)
 
-                        
+                        //Carbs number
+                        Text("20")
+                            .offset(x: 5, y: 45)
+                            .font(.system(size: 20))
+
                         
                         Text("Carbs")
                             .frame(width: 70, height: 10)
                             .offset(x: 5, y: 70)
                             .opacity(0.6)
                         
+                        //Fats number
+                        Text("18")
+                            .offset(x: 100, y: 45)
+                            .font(.system(size: 20))
+
                         Text("Fats")
                             .frame(width: 70, height: 10)
                             .offset(x: 100, y: 70)
@@ -103,7 +115,10 @@ struct ContentView: View {
                             .padding()
                             .frame(width: 300, height: 75)
                             .background(Rectangle().fill(Color.white).shadow(radius: 3))
-                        
+                        Text("30")
+                            .offset(x: -95, y: -5)
+                            .font(.system(size: 20))
+
                         Text("Fluid Ounces")
                             .frame(width: 100, height: 10)
                             .offset(x: -90, y: 20)
