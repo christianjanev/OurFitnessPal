@@ -34,46 +34,121 @@ struct ExerciseView: View {
                 .offset(x: -95, y: 0)
                 .font(.system(size: 20))
             
+            ZStack(){
+
+                Image("weightHealth")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 300, height: 125)
+                    .clipped()
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .opacity(0.6)
+                
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color.black)
+                    .frame(width: 300, height: 125)
+                
+                
+                Text("Muscle Gain")
+                    .frame(width: 300, height: 30)
+                    .background(Color(.green))
+                    .offset(x: 0, y: 47)
+                    .font(.system(size: 20))
+            }//closing z
             
             Text("Muscle Gain")
                 .frame(width: 200, height: 40)
                 .offset(x: -95, y: 0)
                 .font(.system(size: 20))
-
-
             
+            ZStack(){
+
+                Image("muscleHealth")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 300, height: 125)
+                    .clipped()
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .opacity(0.6)
+                
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color.black)
+                    .frame(width: 300, height: 125)
+                
+                
+                Text("Muscle Gain")
+                    .frame(width: 300, height: 30)
+                    .background(Color(.green))
+                    .offset(x: 0, y: 47)
+                    .font(.system(size: 20))
+            }//closing z
+
+
+
             
             Text("Heart Healthy")
                 .frame(width: 200, height: 40)
                 .offset(x: -95, y: 0)
                 .font(.system(size: 20))
             
+            ZStack(){
+
+                Image("heartHealth")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 300, height: 125)
+                    .clipped()
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .opacity(0.6)
+                
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color.black)
+                    .frame(width: 300, height: 125)
+                
+                
+                Text("Heart Health")
+                    .frame(width: 300, height: 30)
+                    .background(Color(.green))
+                    .offset(x: 0, y: 47)
+                    .font(.system(size: 20))
+            }//closing z
+
+            
             Text("Gut Health")
                 .frame(width: 200, height: 40)
-                .background(Color(.blue))
                 .offset(x: -95, y: 0)
                 .font(.system(size: 20))
+
+            
+            
+            
+
             
             ZStack(){
-                Text("")
-                    .fixedSize(horizontal: false, vertical: true)
-                    .multilineTextAlignment(.center)
-                    .padding()
-                    .frame(width: 300, height: 110)
-                    .background(
-                        ZStack{
-                            Image("gutHealth")
-                                .resizable()
-                                 .scaledToFill()
-                                 .frame(width: 300, height: 575)
-                                 .clipped()
-                                 .clipShape(RoundedRectangle(cornerRadius: 12))
-                            
-                            RoundedRectangle(cornerRadius: 25.0)
-                                .stroke(Color.white)
-                        }//closing z
-                    )//closing .back
+
+                Image("gutHealth")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 300, height: 125)
+                    .clipped()
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .opacity(0.6)
+                
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color.black)
+                    .frame(width: 300, height: 125)
+                
+                
+                Text("Gut Health")
+                    .multilineTextAlignment(.leading)
+                    .frame(width: 300, height: 30)
+                    .background(Color(.green))
+                    .offset(x: 0, y: 47)
+                    .font(.system(size: 20))
             }//closing z
+            
+            
+            
             
             
         } //closing Vstack
