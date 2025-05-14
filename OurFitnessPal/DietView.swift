@@ -29,6 +29,7 @@ struct DietView: View {
             
             Divider()
             
+            
             List {
                 if let calories = calories[Calendar.current.startOfDay(for: rawPickDate)] {
                     ForEach(calories, id: \.self) { calorie in

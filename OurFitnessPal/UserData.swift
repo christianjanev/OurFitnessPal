@@ -29,4 +29,5 @@ class UserData {
     func calorieGoal() -> Double {
         return proteinGoal*4 + carbGoal*4 + fatGoal*9
     }
+    
 }
