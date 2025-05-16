@@ -12,7 +12,11 @@ struct CalorieFullView: View {
     let calorie: CalorieData
     
     var body: some View {
-        Text("")
+        VStack {
+            Text(calorie.name)
+                .font(.largeTitle)
+                .frame(maxHeight: .infinity, alignment: .topLeading)
+        }
     }
 }
 
