@@ -118,6 +118,7 @@ struct ExerciseView: View {
                 .frame(width: 200, height: 40)
                 .offset(x: -95, y: 0)
                 .font(.system(size: 20))
+                .font(.system(size: 20))
 
             
             
