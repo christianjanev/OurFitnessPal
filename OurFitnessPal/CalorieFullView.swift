@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct CalorieFullView: View {
-    let calorie: CalorieData
+    @Binding var calorie: CalorieData
     
     var body: some View {
         VStack {

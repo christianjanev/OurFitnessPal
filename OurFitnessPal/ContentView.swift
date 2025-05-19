@@ -212,17 +212,65 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $firstRun) {
-            TextField("Protein", value: $proteinGoal, format: .number)
-            TextField("Carb", value: $carbGoal, format: .number)
-            TextField("Fat", value: $fatGoal, format: .number)
-            TextField("Water", value: $waterGoal, format: .number)
-            TextField("Weight", value: $initialWeight, format: .number)
-            Button("Add") {
-                if userData.isEmpty {
-                    modelContext.insert(UserData(proteinGoal: proteinGoal, carbGoal: carbGoal, fatGoal: fatGoal, waterGoal: waterGoal, weights: [Calendar.current.startOfDay(for: Date.now): initialWeight], firstTimeRun: false))
+            VStack {
+                Text("Welcome to OurFitnessPal!")
+                    .font(.system(size: 31))
+                
+                Spacer()
+                
+                Text("Daily Goals")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.title2)
+                
+                HStack {
+                    Text("Protein Goal (grams):")
+                    TextField("Protein", value:
+                                $proteinGoal, format: .number)
                 }
-                firstRun = false
+                .frame(maxWidth: .infinity)
+                
+                HStack {
+                    Text("Carb Goal (grams):")
+                    TextField("Carbohydrate Goal", value:
+                                $carbGoal, format: .number)
+                }
+                .frame(maxWidth: .infinity)
+                
+                HStack {
+                    Text("Fat Goal (grams):")
+                    TextField("Fat Goal", value:
+                                $fatGoal, format: .number)
+                }
+                .frame(maxWidth: .infinity)
+                
+                HStack {
+                    Text("Water Goal (fl. oz):")
+                    TextField("Water Goal", value:
+                                $waterGoal, format: .number)
+                }
+                .frame(maxWidth: .infinity)
+                
+                HStack {
+                    Text("Current Weight (lbs.):")
+                    TextField("Current Weight", value:
+                                $initialWeight, format: .number)
+                }
+                .frame(maxWidth: .infinity)
+                
+                Spacer()
+                
+                Spacer()
+                
+                
+                Button("Submit") {
+                    if userData.isEmpty {
+                        modelContext.insert(UserData(proteinGoal: proteinGoal, carbGoal: carbGoal, fatGoal: fatGoal, waterGoal: waterGoal, weights: [Calendar.current.startOfDay(for: Date.now): initialWeight], firstTimeRun: false))
+                    }
+                    firstRun = false
+                }
+                .font(.title2)
             }
+            .padding()
         }
     } //Closing SomeView
     
