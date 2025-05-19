@@ -22,26 +22,29 @@ struct DietView: View {
     @State var rawPickDate = Date()
     
     var body: some View {
-        VStack {
-            
-            DatePicker("Pick Date", selection: $rawPickDate, displayedComponents: [.date])
-                .padding()
-            
-            Divider()
-            
-            
-            List {
-                if let calories = calories[Calendar.current.startOfDay(for: rawPickDate)] {
-                    ForEach(calories, id: \.self) { calorie in
-                            CalorieView(calorie: calorie)
+        NavigationView {
+            VStack {
+                    
+                DatePicker("Pick Date", selection: $rawPickDate, displayedComponents: [.date])
+                    .padding()
+                
+                Divider()
+                
+                List {
+                    if let calories = calories[Calendar.current.startOfDay(for: rawPickDate)] {
+                        ForEach(calories, id: \.self) { calorie in
+                            NavigationLink(destination: CalorieFullView(calorie: calorie)) {
+                                CalorieView(calorie: calorie)
+                            }
+                        }
                     }
                 }
+                
+                Button("Add") {
+                    let calorie: CalorieData = CalorieData(date: rawPickDate, carbs: 50.2, protein: 10.2, satFat: 3, unsatFat: 2, transFat: 0, name: "Food2", sodium: 100)
+                    modelContext.insert(calorie)
+                }//closing add
             }
-            
-            Button("Add") {
-                let calorie: CalorieData = CalorieData(date: rawPickDate, carbs: 50.2, protein: 10.2, satFat: 3, unsatFat: 2, transFat: 0, name: "Food2", sodium: 100)
-                modelContext.insert(calorie)
-            }//closing add
         }
     }
 }

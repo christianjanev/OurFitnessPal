@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct CalorieFullView: View {
-    @Binding var calorie: CalorieData
+    let calorie: CalorieData
     
     var body: some View {
         Text(calorie.name)
@@ -17,7 +17,9 @@ struct CalorieFullView: View {
         
         VStack {
             
-            Text("")
+            Spacer()
+                .frame(height: 10)
+            
             //HStack for Calories
             HStack(){
                 Text("Calories")
@@ -25,7 +27,7 @@ struct CalorieFullView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 10)
                 //fill in backend number
-                Text("1909")
+                Text("\(Int(getCalorieCount(calorie: calorie)))")
                     .font(.title)
                     .padding(.trailing, 10)
             }
@@ -39,12 +41,12 @@ struct CalorieFullView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 20)
                 
-                Text("45")
+                Text("\(Int(((calorie.satFat + calorie.unsatFat + calorie.transFat)*9).rounded()))")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, -45)
             }
             HStack(){
-                Text("Saturated:")
+                Text("Saturated: \(Int(calorie.satFat.rounded()))")
                     .frame(width: 275, alignment: .leading)
                     .padding(.leading, 100)
                 
@@ -53,7 +55,7 @@ struct CalorieFullView: View {
             }
             
             HStack(){
-                Text("Unsaturated:")
+                Text("Unsaturated: \(Int(calorie.unsatFat.rounded()))")
                     .frame(width: 275, alignment: .leading)
                     .padding(.leading, 100)
                 
@@ -61,7 +63,7 @@ struct CalorieFullView: View {
             
             
             HStack(){
-                Text("Trans:")
+                Text("Trans: \(Int(calorie.transFat.rounded()))")
                     .frame(width: 275, alignment: .leading)
                     .padding(.leading, 100)
             }
@@ -72,29 +74,21 @@ struct CalorieFullView: View {
                 Text("Sodium:")
                     .frame(width: 275, alignment: .leading)
                     .padding(.leading, 20)
-                Text("45")
+                Text("\(Int(calorie.sodium.rounded()))")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, -45)
                 
             }
             
             HStack(){
-                Text("Carbs:")
+                Text("Carbs: \(Int(calorie.carbs.rounded()))")
                     .frame(width: 275, alignment: .leading)
                     .padding(.leading, 20)
                 
             }
             
             HStack(){
-                Text("Sugar:")
-                    .frame(width: 275, alignment: .leading)
-                    .padding(.leading, 20)
-                
-
-            }
-            
-            HStack(){
-                Text("Protein:")
+                Text("Protein: \(Int(calorie.protein.rounded()))")
                     .frame(width: 275, alignment: .leading)
                     .padding(.leading, 20)
 
@@ -115,6 +109,14 @@ struct CalorieFullView: View {
 
         
         
+    }
+    
+    func getCalorieCount(calorie: CalorieData) -> Double {
+        let carbsCalories = calorie.carbs * 4
+        let proteinCalories = calorie.protein * 4
+        let totalFat = getTotalFat(calorie: calorie)
+        let fatCalories = totalFat * 9
+        return carbsCalories + proteinCalories + fatCalories
     }
 }
 
