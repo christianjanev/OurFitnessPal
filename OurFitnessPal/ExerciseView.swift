@@ -22,7 +22,7 @@ struct ExerciseView: View {
     var body: some View {
         VStack {
             //Main Title
-            Text("OurFitnessPal")
+            Text("Mycros")
                 .font(.system(size: 40))
                 .frame(width: 700, height: 60)
 //                        .background(Color.green)

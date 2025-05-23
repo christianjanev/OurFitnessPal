@@ -41,7 +41,7 @@ struct ContentView: View {
                     VStack(){
                         
                         //Main Title
-                        Text("OurFitnessPal")
+                        Text("Mycros")
                             .font(.system(size: 40))
                             .frame(width: 700, height: 50)
                         //                        .background(Color.green)
@@ -213,7 +213,7 @@ struct ContentView: View {
         }
         .sheet(isPresented: $firstRun) {
             VStack {
-                Text("Welcome to OurFitnessPal!")
+                Text("Welcome to Mycros!")
                     .font(.system(size: 31))
                 
                 Spacer()
